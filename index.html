@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Recensement Kumo</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a1122;--navy:#13213f;--line:#2a3558;--ink:#ecebf5;--mute:#8d97b5;--gold:#ebbc4a;--gold2:#c8932a;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f6efd8;--ink:#2b2112;--mute:#6b5a2a;--line:#d9c27a}}
+:root[data-theme="light"]{--bg:#f6efd8;--ink:#2b2112;--mute:#6b5a2a;--line:#d9c27a}
+:root[data-theme="dark"]{--bg:#0a1122;--ink:#ecebf5;--mute:#8d97b5;--line:#2a3558}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font:600 14px/1.4 Nunito,system-ui,sans-serif;background:radial-gradient(800px 300px at 50% 0,rgba(235,188,74,.12),transparent 70%),var(--bg);min-height:100%}
+header{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:22px;flex-wrap:wrap;padding:8px 20px;padding-right:190px;background:linear-gradient(180deg,#0d1730,#0a1122);border-bottom:2px solid var(--gold);box-shadow:0 6px 24px rgba(0,0,0,.4)}
+.logo{display:flex;align-items:center;gap:10px}.logo svg{width:34px;height:34px;filter:drop-shadow(0 0 8px rgba(235,188,74,.6))}
+.logo input{display:block;background:none;border:0;color:#f4efe0;font:800 19px Nunito,sans-serif;letter-spacing:.08em;text-transform:uppercase;width:240px;padding:0}
+.logo input+input{font:700 10px Nunito,sans-serif;color:var(--gold);letter-spacing:.2em;width:260px}
+nav{display:flex;gap:8px;flex-wrap:wrap}
+.btn,nav a{font:800 11px Nunito,sans-serif;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;cursor:pointer;color:#f4efe0;background:var(--navy);border:1px solid #33436e;border-radius:6px;padding:8px 12px;box-shadow:0 3px 0 #070d1a}
+.btn:hover,nav a:hover{border-color:var(--gold);color:var(--gold)}
+.btn.gold{color:#2b2112;background:linear-gradient(180deg,#f7d46b,#d9a63a);border-color:#f0c458;box-shadow:0 3px 0 #8c6414}.btn.gold:hover{color:#2b2112;filter:brightness(1.07)}
+.btn.red{background:#3a1c24;color:#f3b9bf;border-color:#6a2b37}
+.btn.sm{padding:5px 10px;box-shadow:0 2px 0 #070d1a}
+.chip{background:linear-gradient(90deg,rgba(235,188,74,.38) var(--p,0%),var(--navy) var(--p,0%))}
+.chip[aria-pressed=true]{border-color:var(--gold);color:var(--gold);box-shadow:0 0 12px rgba(235,188,74,.4)}.chip i{font-style:normal;color:var(--gold);margin-left:6px}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.mjb{position:fixed;right:14px;top:calc(10px + env(safe-area-inset-top,0px));z-index:9}
+main{max-width:1500px;margin:0 auto;padding:16px 20px 40px}
+.bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:10px}
+.sts{display:flex;gap:8px;flex-wrap:wrap}
+.st{display:flex;align-items:baseline;gap:8px;background:var(--navy);border:1px solid #33436e;border-left:3px solid var(--gold);border-radius:6px;padding:5px 12px}
+.st b{font:800 20px Nunito,sans-serif;color:var(--gold)}.st span{color:#a9b3d1;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.bar input[type=search]{flex:1;min-width:200px;background:var(--navy);border:1px solid #33436e;border-radius:6px;padding:8px 12px;color:#f4efe0;font:inherit}
+.tbl{background:var(--navy);border:1px solid #33436e;border-top:3px solid var(--gold);border-radius:8px;overflow:hidden;color:#ecebf5;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.row{display:grid;grid-template-columns:62px 1.2fr 1.1fr .9fr 1fr 1.2fr 92px auto;gap:6px;align-items:center;padding:3px 14px;border-bottom:1px solid rgba(255,255,255,.06)}
+.row:hover{background:rgba(235,188,74,.06)}.row>*{min-width:0}
+.cols{color:#8d97b5;font:800 11px Nunito,sans-serif;letter-spacing:.1em;text-transform:uppercase;background:#0e1a35;border-bottom:1px solid #33436e;padding:9px 14px}.cols:hover{background:#0e1a35}
+.band{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:7px 14px;background:linear-gradient(90deg,rgba(235,188,74,.24),rgba(235,188,74,.04));border-left:5px solid var(--gold);border-top:1px solid #33436e;border-bottom:1px solid #33436e}
+.tg{width:26px;height:26px;border-radius:6px;border:1px solid #33436e;background:#0a1122;color:var(--gold);cursor:pointer;font-size:14px;line-height:1}
+.gn{background:none;border:0;color:var(--gold);font:800 17px Nunito,sans-serif;letter-spacing:.05em;text-transform:uppercase;width:210px;max-width:100%;padding:0}
+.bm{color:#c3cae6;font-size:12px;flex:1}.bm b{color:#fff}
+.bt{display:flex;gap:6px}
+.row input.t{width:100%;background:transparent;border:1px solid transparent;border-radius:5px;padding:6px 8px;color:#e6e4f2;font:600 14px Nunito,sans-serif}
+.row input.t.b{font-weight:800;color:#fff}.row input.t::placeholder{color:#5d688e}
+.row input.t:not([readonly]):hover{border-color:#33436e}.row input.t:focus{border-color:var(--gold);background:#0a1122;outline:none}
+.row input[readonly]{cursor:default}
+input.pl{width:52px;height:30px;text-align:center;font:800 16px Nunito,sans-serif;color:#2b2112;background:linear-gradient(180deg,#f7d46b,#d9a63a);border:1px solid #b8862a;border-radius:7px;box-shadow:0 2px 0 #8c6414}
+.dispo{display:flex;align-items:center;gap:7px;font:800 11px Nunito,sans-serif;letter-spacing:.05em;text-transform:uppercase;color:#f4efe0;background:#0a1122;border:1px solid #33436e;border-radius:6px;padding:6px 9px;cursor:pointer}
+.dispo:before{content:"";width:9px;height:9px;border-radius:50%;background:#e5534b;box-shadow:0 0 6px #e5534b}.dispo.on:before{background:#3fd27c;box-shadow:0 0 6px #3fd27c}
+.ac{display:flex;gap:5px;justify-content:flex-end}
+.x{height:28px;min-width:28px;border-radius:6px;border:1px solid #33436e;background:#0a1122;color:#fff;cursor:pointer;font-size:15px;line-height:1}
+.x.up,.x.dn{padding:0 9px;font:800 11px Nunito,sans-serif;letter-spacing:.04em;text-transform:uppercase}
+.x.up{color:#2b2112;background:linear-gradient(180deg,#f7d46b,#d9a63a);border-color:#f0c458}.x.dn{color:#f3b9bf;background:#3a1c24;border-color:#6a2b37}
+.none{padding:10px 20px;color:#8d97b5}
+body:not(.mj) .mjonly{display:none!important}
+.dt{margin-top:18px;background:var(--navy);border:1px solid #33436e;border-radius:8px;color:#ecebf5}
+.dt summary{cursor:pointer;padding:10px 16px;font:800 12px Nunito,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
+.hist{padding:0 16px 10px}.hist div{display:flex;gap:12px;padding:6px 0;border-top:1px dashed #33436e}.hist time{flex:none;color:#8d97b5;font-size:12px;min-width:130px}.hist p{margin:0;padding:6px 0;color:#8d97b5}
+.hide{display:none}.row.me{background:rgba(235,188,74,.1)}.dispo:disabled{opacity:.55;cursor:default}.aerr{color:#f3b9bf;font-size:13px;min-height:18px;margin-bottom:10px}.acc{padding:0 16px 12px}.acc input{width:100%;margin-bottom:8px;background:#0a1122;border:1px solid #33436e;border-radius:6px;padding:8px 12px;color:#f4efe0;font:inherit}.ar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:7px 0;border-top:1px dashed #33436e}.ar .n{font-weight:800;min-width:160px}.ar .l{flex:1;color:#8d97b5;font-size:12px}.rb{font:800 11px Nunito,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:3px 9px;border-radius:999px;border:1px solid #33436e}.rb.adm{color:#2b2112;background:linear-gradient(180deg,#f7d46b,#d9a63a);border-color:#f0c458}.srt{display:flex;align-items:center;gap:6px;color:var(--mute);font:800 11px Nunito,sans-serif;letter-spacing:.06em;text-transform:uppercase}.srt select{background:var(--navy);color:#f4efe0;border:1px solid #33436e;border-radius:6px;padding:7px 10px;font:700 13px Nunito,sans-serif}
+#toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,30px);opacity:0;pointer-events:none;z-index:20;background:var(--navy);color:#f4efe0;border:1px solid var(--gold);border-left:5px solid var(--gold);border-radius:6px;padding:12px 18px;box-shadow:0 10px 30px rgba(0,0,0,.5);transition:.3s}#toast.on{opacity:1;transform:translate(-50%,0)}
+.mod{position:fixed;inset:0;z-index:30;background:rgba(5,9,20,.75);display:grid;place-items:center;padding:16px}.mod.hide{display:none}.mod .box{width:min(380px,100%);background:var(--navy);border:1px solid var(--gold);border-top:4px solid var(--gold);border-radius:8px;padding:20px;color:#f4efe0;box-shadow:0 20px 50px rgba(0,0,0,.6)}.mod p{margin:0 0 14px;font:800 16px Nunito,sans-serif}.mod input{width:100%;margin-bottom:14px;background:#0a1122;border:1px solid #33436e;border-radius:6px;padding:10px 14px;color:#f4efe0;font:inherit}.mod .row{display:flex;gap:10px;justify-content:flex-end;border:0;padding:0}
+footer{text-align:center;color:var(--mute);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:18px 16px 30px;border-top:1px solid var(--line)}
+@media(max-width:980px){.cols{display:none}.row{display:flex;flex-wrap:wrap;padding:6px 14px}.row>*{flex:1 1 150px}.row .pl,.row .dispo,.row .ac{flex:none}header{padding-right:140px}.logo input{width:170px}}
+@media(prefers-reduced-motion:reduce){#toast{transition:none}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">
+    <svg viewBox="0 0 120 200" aria-hidden="true"><polygon points="72,0 18,112 54,112 40,200 106,76 68,76 90,0" fill="#ebbc4a" stroke="#fff3c4" stroke-width="5" stroke-linejoin="round"/></svg>
+    <div><input id="title" aria-label="Titre" value="Recensement Kumo"><input id="subtitle" aria-label="Sous-titre" value="Effectifs · Paliers · Clans"></div>
+  </div>
+  <nav><a href="#reg">Registre</a><a href="#clans">Clans</a><a href="#hist">Historique</a></nav>
+</header>
+<button class="btn mjb" id="mjb">Connexion</button>
+<main>
+  <div class="bar"><div class="sts" id="stats"></div><input type="search" id="q" placeholder="Rechercher un pseudo, un prénom RP, un clan…" aria-label="Rechercher"><button class="btn chip" id="fDispo" aria-pressed="false">Disponibles seulement</button><label class="srt">Trier par <select id="sortSel"><option value="clan">Clan</option><option value="palier">Palier</option><option value="none">Ordre d'ajout</option></select></label><button class="btn" id="colAll">Tout replier / déplier</button></div>
+  <div class="bar" id="clans"></div>
+  <div class="bar mjonly"><button class="btn gold" id="addG">Nouveau grade</button><button class="btn" id="exp">Exporter</button><button class="btn" id="clrlog">Vider l'historique</button></div>
+  <div class="tbl" id="reg"><div id="grades"></div></div>
+  <details class="dt mjonly" id="acc"><summary>Comptes &amp; permissions admin</summary><div class="acc"><input type="search" id="qa" placeholder="Chercher un compte…" aria-label="Chercher un compte"><div id="accList"></div></div></details>
+  <details class="dt" id="hist"><summary>Historique des promotions</summary><div class="hist" id="histList"></div></details>
+</main>
+<div class="mod hide" id="mod" role="dialog" aria-modal="true"><div class="box"><p id="modT"></p><input id="modI" type="password" autocomplete="off" aria-label="Mot de passe"><div class="row"><button class="btn" id="modC">Annuler</button><button class="btn gold" id="modO">Valider</button></div></div></div>
+<div class="mod" id="auth" role="dialog" aria-modal="true"><div class="box"><p>Recensement Kumo</p><input id="aP" placeholder="Pseudo MC (ex : Kiwami_)" autocomplete="username" aria-label="Pseudo"><input id="aW" type="password" placeholder="Mot de passe" autocomplete="current-password" aria-label="Mot de passe"><div class="aerr" id="authErr"></div><div class="row"><button class="btn" id="aUp">Créer un compte</button><button class="btn gold" id="aIn">Se connecter</button></div></div></div>
+<div id="toast" role="status"></div>
+<footer>Recensement Kumo · Effectifs &amp; paliers · Données synchronisées en direct</footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script>
+const SB_URL='https://adbbebkkjpwxmuojwovi.supabase.co',SB_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFkYmJlYmtranB3eG11b2p3b3ZpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTE0NjgwNDcsImV4cCI6MjEwNzA0NDA0N30.yJ444yQuPm16u7nX1Pe9VhxQP85fYi9Y8sXRjKOW-zY';
+const CFG=!/^COLLE/.test(SB_URL),sb=CFG?supabase.createClient(SB_URL,SB_KEY):null;
+const $=id=>document.getElementById(id);
+const mail=p=>p.trim().toLowerCase().replace(/[^a-z0-9._-]/g,'_')+'@kumo-recensement.com';
+const S={title:'Recensement Kumo',subtitle:'Effectifs · Paliers · Clans',grades:[],log:[],profiles:[],col:{},sort:'clan'};
+let me=null,mj=false,clanF='',query='',onlyDispo=false,qa='';
+try{S.col=JSON.parse(localStorage.getItem('rk-col'))||{};S.sort=localStorage.getItem('rk-sort')||'clan'}catch(e){}
+const saveCol=()=>{try{localStorage.setItem('rk-col',JSON.stringify(S.col))}catch(e){}};
+const esc=s=>String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');
+const filled=r=>r.discord||r.mc||r.rp;
+const can=r=>mj||(me&&r.owner===me.id);
+const avg=a=>a.length?(a.reduce((x,r)=>x+(+r.pl||0),0)/a.length).toFixed(1).replace(/\.0$/,''):'0';
+const SORTS={clan:(a,b)=>(!a.r.clan)-(!b.r.clan)||(a.r.clan||'').localeCompare(b.r.clan||'','fr')||(+b.r.pl||0)-(+a.r.pl||0)||(a.r.mc||'').localeCompare(b.r.mc||'','fr'),palier:(a,b)=>(+b.r.pl||0)-(+a.r.pl||0)||(a.r.clan||'').localeCompare(b.r.clan||'','fr')||(a.r.mc||'').localeCompare(b.r.mc||'','fr')};
+const hue=c=>`hsl(${[...c.toLowerCase()].reduce((a,x)=>a*31+x.charCodeAt(0),7)%360} 65% 55%)`;
+let modRes=null;
+function ask(text){return new Promise(res=>{const m=$('mod');$('modT').textContent=text;$('modI').classList.add('hide');m.classList.remove('hide');modRes=v=>{m.classList.add('hide');modRes=null;res(v)}})}
+$('modO').onclick=()=>modRes&&modRes(true);$('modC').onclick=()=>modRes&&modRes(null);
+let tt;function toast(t){const el=$('toast');el.textContent=t;el.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>el.classList.remove('on'),2600)}
+function stats(){
+ const all=S.grades.flatMap(g=>g.rows.filter(filled));
+ const c={};all.forEach(r=>{if(r.clan)c[r.clan]=(c[r.clan]||0)+1});
+ $('stats').innerHTML=[[all.length,'Effectif'],[avg(all),'Palier moyen'],[all.filter(r=>r.dispo).length,'Dispo'],[Math.max(0,...all.map(r=>+r.pl||0)),'Palier max']].map(([a,b])=>`<div class="st"><b>${a}</b><span>${b}</span></div>`).join('');
+ const mx=Math.max(1,...Object.values(c));
+ $('clans').innerHTML=Object.entries(c).sort((a,b)=>b[1]-a[1]).map(([n,k])=>`<button class="btn chip" style="--p:${Math.round(k/mx*100)}%" data-c="${esc(n)}" aria-pressed="${clanF===n}">${esc(n)}<i>${k}</i></button>`).join('');
+ $('fDispo').setAttribute('aria-pressed',onlyDispo);
+}
+function ok(r){
+ if(clanF&&r.clan!==clanF)return false;
+ if(onlyDispo&&!r.dispo)return false;
+ return !query||[r.mc,r.discord,r.clan,r.rp,r.spe].join(' ').toLowerCase().includes(query);
+}
+function hist(){$('histList').innerHTML=S.log.length?S.log.map(l=>`<div><time>${new Date(l.d).toLocaleString('fr-FR',{dateStyle:'short',timeStyle:'short'})}</time><span>${esc(l.t)}</span></div>`).join(''):'<p>Aucune promotion enregistrée pour le moment.</p>'}
+function accounts(){
+ if(!mj)return;
+ $('accList').innerHTML=S.profiles.filter(p=>!qa||p.pseudo.toLowerCase().includes(qa)).map(p=>{
+  const row=S.grades.flatMap(g=>g.rows).find(r=>r.owner===p.id),adm=p.role==='admin',self=p.id===me.id;
+  return`<div class="ar"><span class="n">${esc(p.pseudo)}${self?' (toi)':''}</span><span class="rb ${adm?'adm':''}">${adm?'Admin':'Joueur'}</span><span class="l">${row?'Ligne : '+esc(row.mc):'Aucune ligne liée'}</span><button class="btn sm ${adm?'red':'gold'}" data-role="${p.id}" ${self?'disabled title="Tu ne peux pas retirer tes propres droits"':''}>${adm?'Retirer admin':'Donner admin'}</button></div>`}).join('')||'<p style="color:#8d97b5">Aucun compte.</p>';
+}
+function render(){
+ if(!me)return;
+ document.body.classList.toggle('mj',mj);
+ $('sortSel').value=S.sort;
+ $('mjb').textContent='Déconnexion · '+me.pseudo+(mj?' (admin)':'');
+ for(const id of['title','subtitle']){const el=$(id);el.value=S[id];el.readOnly=true}
+ const f=clanF||query||onlyDispo,ro=mj?'':'readonly';
+ const inp=(i,j,k,ph,cls='')=>{const r=S.grades[i].rows[j];return`<input class="t ${cls}" data-g="${i}" data-r="${j}" data-k="${k}" value="${esc(r[k])}" placeholder="${ph}" aria-label="${ph}" ${mj||(r.owner===me.id&&k!=='mc')?'':'readonly'}>`};
+ $('grades').innerHTML='<div class="row cols"><span>Palier</span><span>Pseudo MC</span><span>Discord</span><span>Clan</span><span>Prénom RP</span><span>Spécialisation</span><span>Dispo</span><span class="mjonly">Actions</span></div>'+(S.grades.map((g,i)=>{
+  const rows=g.rows.map((r,j)=>({r,j})).filter(({r})=>!f||(filled(r)&&ok(r))).sort(SORTS[S.sort]||(()=>0));
+  if(f&&!rows.length)return'';
+  const fl=g.rows.filter(filled),open=f||!S.col[g.id];
+  const body=rows.map(({r,j})=>`<div class="row ${filled(r)?'':'empty'} ${r.owner===me.id?'me':''}" style="border-left:3px solid ${r.clan?hue(r.clan):'transparent'}"><input class="pl" type="number" data-g="${i}" data-r="${j}" data-k="pl" value="${esc(r.pl)}" aria-label="Palier" ${can(r)?'':'readonly'}>${inp(i,j,'mc','Pseudo MC','b')}${inp(i,j,'discord','Discord')}${inp(i,j,'clan','Clan')}${inp(i,j,'rp','Prénom RP')}${inp(i,j,'spe','Spécialisation')}<button class="dispo ${r.dispo?'on':''}" data-tg="${i}.${j}" ${can(r)?'':'disabled'}>${r.dispo?'Dispo':'Absent'}</button><span class="ac mjonly">${filled(r)&&i>0?`<button class="x up" data-up="${i}.${j}" title="Promouvoir : ${esc(S.grades[i-1].name)}">↑ Grade</button>`:''}${filled(r)&&i<S.grades.length-1?`<button class="x dn" data-dn="${i}.${j}" title="Rétrograder : ${esc(S.grades[i+1].name)}">↓</button>`:''}<button class="x" data-delr="${i}.${j}" aria-label="Supprimer la ligne">×</button></span></div>`).join('');
+  return`<div class="band"><button class="tg" data-tog="${g.id}" aria-expanded="${open}" aria-label="Replier ou déplier">${open?'▾':'▸'}</button><input class="gn" data-g="${i}" data-k="name" value="${esc(g.name)}" aria-label="Nom du grade" ${ro}><span class="bm"><b data-n="${i}">${fl.length}</b> membres · palier moyen <b data-a="${i}">${avg(fl)}</b></span><span class="bt mjonly"><button class="btn sm gold" data-add="${i}">+ Membre</button><button class="btn sm red" data-delg="${i}">Supprimer</button></span></div>`+(open?(body||'<div class="none">Aucun membre pour le moment.</div>'):'')}).join('')||'<p class="none">Aucun résultat.</p>');
+ stats();hist();accounts();
+}
+async function load(){
+ const[g,m,l,pr]=await Promise.all([sb.from('grades').select('*').order('position'),sb.from('members').select('*').order('created_at'),sb.from('log').select('*').order('created_at',{ascending:false}).limit(60),sb.from('profiles').select('*').order('pseudo')]);
+ if(g.error||m.error)return toast('Erreur de chargement des données');
+ S.grades=g.data.map(x=>({id:x.id,name:x.name,rows:m.data.filter(r=>r.grade_id===x.id)}));
+ S.log=(l.data||[]).map(x=>({d:Date.parse(x.created_at),t:x.txt}));
+ S.profiles=pr.data||[];const mine=S.profiles.find(x=>x.id===me.id);if(mine){me=mine;mj=mine.role==='admin'}
+ render();
+}
+let pend={},pt;
+function push(tb,id,patch){const key=tb+':'+id;pend[key]=Object.assign(pend[key]||{},patch);clearTimeout(pt);pt=setTimeout(flush,500)}
+function flush(){const p=pend;pend={};for(const key in p){const[tb,id]=key.split(':');sb.from(tb).update(p[key]).eq('id',id).select().then(({data,error})=>{if(error)toast('Refusé : '+error.message);else if(!data.length)toast('Modification refusée')})}}
+document.addEventListener('input',e=>{
+ const t=e.target,k=t.dataset.k;
+ if(t.id==='sortSel'){S.sort=t.value;try{localStorage.setItem('rk-sort',t.value)}catch(x){}render();return}
+ if(t.id==='qa'){qa=t.value.trim().toLowerCase();accounts();return}
+ if(t.id==='q'){query=t.value.trim().toLowerCase();render();return}
+ if(t.readOnly||!k)return;
+ const g=S.grades[t.dataset.g];
+ if(t.dataset.r!==undefined){
+  const r=g.rows[t.dataset.r];r[k]=k==='pl'?(t.value===''?0:+t.value):t.value;push('members',r.id,{[k]:r[k]});
+  t.closest('.row').classList.toggle('empty',!filled(r));
+  const fl=g.rows.filter(filled),i=t.dataset.g;document.querySelector('[data-n="'+i+'"]').textContent=fl.length;document.querySelector('[data-a="'+i+'"]').textContent=avg(fl);
+ }else{g[k]=t.value;push('grades',g.id,{[k]:t.value})}
+ stats();
+});
+document.addEventListener('click',e=>{
+ const b=e.target.closest('button');if(!b)return;const d=b.dataset;
+ if(b.classList.contains('mjonly')&&!mj)return;
+ if(b.id==='mjb'){sb&&sb.auth.signOut().then(()=>location.reload());return}
+ if(d.c!==undefined){clanF=clanF===d.c?'':d.c;render()}
+ else if(d.tg){const[i,j]=d.tg.split('.');const r=S.grades[i].rows[j];if(!can(r))return;r.dispo=!r.dispo;push('members',r.id,{dispo:r.dispo});render()}
+ else if(d.role){const p=S.profiles.find(x=>x.id===d.role);if(!mj||!p||p.id===me.id)return;const adm=p.role==='admin';ask((adm?'Retirer les droits admin à ':'Donner les droits admin à ')+p.pseudo+' ?').then(v=>{if(!v)return;sb.from('profiles').update({role:adm?'player':'admin'}).eq('id',p.id).select().then(({data,error})=>{if(error||!data.length)return toast(error?error.message:'Refusé');sb.from('log').insert({txt:(adm?'Droits admin retirés — ':'Droits admin donnés — ')+p.pseudo}).then(()=>{toast((adm?'Admin retiré : ':'Nouvel admin : ')+p.pseudo);load()})})})}
+ else if(d.tog){S.col[d.tog]=!S.col[d.tog];saveCol();render()}
+ else if(b.id==='colAll'){const any=S.grades.some(g=>!S.col[g.id]);S.col={};if(any)S.grades.forEach(g=>S.col[g.id]=true);saveCol();render()}
+ else if(d.up||d.dn){const[i,j]=(d.up||d.dn).split('.').map(Number),to=S.grades[d.up?i-1:i+1],from=S.grades[i];if(!to)return;const r=from.rows[j],msg=`${r.mc||r.rp} : ${from.name} → ${to.name}`;sb.from('members').update({grade_id:to.id}).eq('id',r.id).select().then(({data,error})=>{if(error||!data.length)return toast('Refusé');sb.from('log').insert({txt:(d.up?'Promotion — ':'Rétrogradation — ')+msg}).then(()=>{toast((d.up?'Promu : ':'Rétrogradé : ')+msg);load()})})}
+ else if(d.add){sb.from('members').insert({grade_id:S.grades[d.add].id}).then(()=>load())}
+ else if(d.delr){const[i,j]=d.delr.split('.');ask('Supprimer cette ligne ?').then(v=>{if(v)sb.from('members').delete().eq('id',S.grades[i].rows[j].id).then(()=>load())})}
+ else if(d.delg){ask('Supprimer ce grade et ses membres ?').then(v=>{if(v)sb.from('grades').delete().eq('id',S.grades[d.delg].id).then(()=>load())})}
+ else if(b.id==='fDispo'){onlyDispo=!onlyDispo;render()}
+ else if(b.id==='addG'){sb.from('grades').insert({name:'Nouveau grade',position:S.grades.length}).then(()=>load())}
+ else if(b.id==='exp'){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(S.grades,null,1)],{type:'application/json'}));a.download='recensement-kumo.json';a.click()}
+ else if(b.id==='clrlog'){ask("Vider l'historique ?").then(v=>{if(v)sb.from('log').delete().gte('id',0).then(()=>load())})}
+});
+const authMsg=t=>{$('authErr').textContent=t};
+async function doAuth(signup){
+ if(!CFG)return authMsg('Renseigne SB_URL et SB_KEY au début du script.');
+ const p=$('aP').value.trim(),w=$('aW').value;
+ if(p.length<2||p.length>24)return authMsg('Pseudo : 2 à 24 caractères.');
+ if(w.length<6)return authMsg('Mot de passe : 6 caractères minimum.');
+ authMsg('…');
+ const r=signup?await sb.auth.signUp({email:mail(p),password:w,options:{data:{pseudo:p}}}):await sb.auth.signInWithPassword({email:mail(p),password:w});
+ if(r.error)return authMsg(/Invalid login/i.test(r.error.message)?'Pseudo ou mot de passe incorrect.':/registered/i.test(r.error.message)?'Ce pseudo est déjà pris.':r.error.message);
+ if(!r.data.session)return authMsg('Compte créé : connecte-toi maintenant.');
+ enter(r.data.user);
+}
+$('aIn').onclick=()=>doAuth(false);$('aUp').onclick=()=>doAuth(true);
+$('aW').onkeydown=e=>{if(e.key==='Enter')doAuth(false)};
+let rl;const sched=()=>{clearTimeout(rl);rl=setTimeout(()=>{const a=document.activeElement;if(a&&a.closest&&a.closest('#grades'))return sched();load()},900)};
+async function enter(u){
+ const{data}=await sb.from('profiles').select('*').eq('id',u.id).single();
+ me=data||{id:u.id,pseudo:'?',role:'player'};mj=me.role==='admin';
+ $('auth').classList.add('hide');await load();
+ sb.channel('rk').on('postgres_changes',{event:'*',schema:'public'},sched).subscribe();
+}
+if(!CFG)authMsg('Renseigne SB_URL et SB_KEY au début du script.');
+else sb.auth.getSession().then(({data})=>{if(data.session)enter(data.session.user)});
+</script>
+</body>
+</html>
