@@ -93,7 +93,7 @@ footer{text-align:center;color:var(--mute);font-size:11px;letter-spacing:.12em;t
 <footer>Recensement Kumo · Effectifs &amp; paliers · Données synchronisées en direct</footer>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
 <script>
-const SB_URL='COLLE_ICI_TON_URL_SUPABASE',SB_KEY='COLLE_ICI_TA_CLE_ANON_PUBLIQUE';
+const SB_URL='https://adbbebkkjpwxmuojwovi.supabase.co',SB_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFkYmJlYmtranB3eG11b2p3b3ZpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTE0NjgwNDcsImV4cCI6MjEwNzA0NDA0N30.yJ444yQuPm16u7nX1Pe9VhxQP85fYi9Y8sXRjKOW-zY';
 const CFG=!/^COLLE/.test(SB_URL),sb=CFG?supabase.createClient(SB_URL,SB_KEY):null;
 const $=id=>document.getElementById(id);
 const mail=p=>p.trim().toLowerCase().replace(/[^a-z0-9._-]/g,'_')+'@kumo-recensement.com';
