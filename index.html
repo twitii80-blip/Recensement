@@ -33,7 +33,7 @@ main{max-width:1500px;margin:0 auto;padding:16px 20px 40px}
 .st b{font:800 20px Nunito,sans-serif;color:var(--gold)}.st span{color:#a9b3d1;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
 .bar input[type=search]{flex:1;min-width:200px;background:var(--navy);border:1px solid #33436e;border-radius:6px;padding:8px 12px;color:#f4efe0;font:inherit}
 .tbl{background:var(--navy);border:1px solid #33436e;border-top:3px solid var(--gold);border-radius:8px;overflow:hidden;color:#ecebf5;box-shadow:0 10px 30px rgba(0,0,0,.35)}
-.row{display:grid;grid-template-columns:62px 1.2fr 1.1fr .9fr 1fr 1.2fr 92px auto;gap:6px;align-items:center;padding:3px 14px;border-bottom:1px solid rgba(255,255,255,.06)}
+.row{display:grid;grid-template-columns:62px 1.2fr 1.1fr .9fr 1fr 1.2fr 62px 92px auto;gap:6px;align-items:center;padding:3px 14px;border-bottom:1px solid rgba(255,255,255,.06)}
 .row:hover{background:rgba(235,188,74,.06)}.row>*{min-width:0}
 .cols{color:#8d97b5;font:800 11px Nunito,sans-serif;letter-spacing:.1em;text-transform:uppercase;background:#0e1a35;border-bottom:1px solid #33436e;padding:9px 14px}.cols:hover{background:#0e1a35}
 .band{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:7px 14px;background:linear-gradient(90deg,rgba(235,188,74,.24),rgba(235,188,74,.04));border-left:5px solid var(--gold);border-top:1px solid #33436e;border-bottom:1px solid #33436e}
@@ -57,11 +57,15 @@ body:not(.mj) .mjonly{display:none!important}
 .dt{margin-top:18px;background:var(--navy);border:1px solid #33436e;border-radius:8px;color:#ecebf5}
 .dt summary{cursor:pointer;padding:10px 16px;font:800 12px Nunito,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
 .hist{padding:0 16px 10px}.hist div{display:flex;gap:12px;padding:6px 0;border-top:1px dashed #33436e}.hist time{flex:none;color:#8d97b5;font-size:12px;min-width:130px}.hist p{margin:0;padding:6px 0;color:#8d97b5}
-.hide{display:none}.row.me{background:rgba(235,188,74,.1)}.dispo:disabled{opacity:.55;cursor:default}.aerr{color:#f3b9bf;font-size:13px;min-height:18px;margin-bottom:10px}.acc{padding:0 16px 12px}.acc input{width:100%;margin-bottom:8px;background:#0a1122;border:1px solid #33436e;border-radius:6px;padding:8px 12px;color:#f4efe0;font:inherit}.ar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:7px 0;border-top:1px dashed #33436e}.ar .n{font-weight:800;min-width:160px}.ar .l{flex:1;color:#8d97b5;font-size:12px}.rb{font:800 11px Nunito,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:3px 9px;border-radius:999px;border:1px solid #33436e}.rb.adm{color:#2b2112;background:linear-gradient(180deg,#f7d46b,#d9a63a);border-color:#f0c458}.srt{display:flex;align-items:center;gap:6px;color:var(--mute);font:800 11px Nunito,sans-serif;letter-spacing:.06em;text-transform:uppercase}.srt select{background:var(--navy);color:#f4efe0;border:1px solid #33436e;border-radius:6px;padding:7px 10px;font:700 13px Nunito,sans-serif}
+.hide{display:none}.row.me{background:rgba(235,188,74,.1)}.dispo:disabled{opacity:.55;cursor:default}.aerr{color:#f3b9bf;font-size:13px;min-height:18px;margin-bottom:10px}.acc{padding:0 16px 12px}.acc input{width:100%;margin-bottom:8px;background:#0a1122;border:1px solid #33436e;border-radius:6px;padding:8px 12px;color:#f4efe0;font:inherit}.ar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:7px 0;border-top:1px dashed #33436e}.ar .n{font-weight:800;min-width:160px}.ar .l{flex:1;color:#8d97b5;font-size:12px}.rb{font:800 11px Nunito,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:3px 9px;border-radius:999px;border:1px solid #33436e}.rb.adm{color:#2b2112;background:linear-gradient(180deg,#f7d46b,#d9a63a);border-color:#f0c458}
+.x.arc{padding:0 9px;font:800 11px Nunito,sans-serif;letter-spacing:.04em;text-transform:uppercase;color:#c3cae6}
+.row select.kk{width:100%;background:#0a1122;color:#8d97b5;border:1px solid #33436e;border-radius:6px;padding:5px 2px;font:800 14px Nunito,sans-serif;text-align:center}.row select.kk:disabled{opacity:1;cursor:default}.row select.kk[data-v="1"]{color:#e0a46b}.row select.kk[data-v="2"]{color:#d5dbe8}.row select.kk[data-v="3"]{color:#ffd24a;border-color:#c8932a}
+.memo{padding:0 16px 12px}.mm{border-top:1px dashed #33436e;padding:10px 0}.mh{display:flex;gap:10px;flex-wrap:wrap;align-items:baseline}.mh b{color:var(--gold);font-size:16px}.mh span{color:#a9b3d1;font-size:12px;flex:1}.mh time{color:#8d97b5;font-size:12px}.mm p{margin:6px 0 0;font-style:italic;color:#d8d4ea}.mb{display:flex;gap:6px;margin-top:8px}.mn{color:#8d97b5;padding:6px 0;margin:0}
+.srt{display:flex;align-items:center;gap:6px;color:var(--mute);font:800 11px Nunito,sans-serif;letter-spacing:.06em;text-transform:uppercase}.srt select{background:var(--navy);color:#f4efe0;border:1px solid #33436e;border-radius:6px;padding:7px 10px;font:700 13px Nunito,sans-serif}
 #toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,30px);opacity:0;pointer-events:none;z-index:20;background:var(--navy);color:#f4efe0;border:1px solid var(--gold);border-left:5px solid var(--gold);border-radius:6px;padding:12px 18px;box-shadow:0 10px 30px rgba(0,0,0,.5);transition:.3s}#toast.on{opacity:1;transform:translate(-50%,0)}
 .mod{position:fixed;inset:0;z-index:30;background:rgba(5,9,20,.75);display:grid;place-items:center;padding:16px}.mod.hide{display:none}.mod .box{width:min(380px,100%);background:var(--navy);border:1px solid var(--gold);border-top:4px solid var(--gold);border-radius:8px;padding:20px;color:#f4efe0;box-shadow:0 20px 50px rgba(0,0,0,.6)}.mod p{margin:0 0 14px;font:800 16px Nunito,sans-serif}.mod input{width:100%;margin-bottom:14px;background:#0a1122;border:1px solid #33436e;border-radius:6px;padding:10px 14px;color:#f4efe0;font:inherit}.mod .row{display:flex;gap:10px;justify-content:flex-end;border:0;padding:0}
 footer{text-align:center;color:var(--mute);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:18px 16px 30px;border-top:1px solid var(--line)}
-@media(max-width:980px){.cols{display:none}.row{display:flex;flex-wrap:wrap;padding:6px 14px}.row>*{flex:1 1 150px}.row .pl,.row .dispo,.row .ac{flex:none}header{padding-right:140px}.logo input{width:170px}}
+@media(max-width:980px){.cols{display:none}.row{display:flex;flex-wrap:wrap;padding:6px 14px}.row>*{flex:1 1 150px}.row .pl,.row .dispo,.row .ac,.row .kk{flex:none}header{padding-right:140px}.logo input{width:170px}}
 @media(prefers-reduced-motion:reduce){#toast{transition:none}}
 </style>
 </head>
@@ -80,6 +84,7 @@ footer{text-align:center;color:var(--mute);font-size:11px;letter-spacing:.12em;t
   <div class="bar mjonly"><button class="btn gold" id="addG">Nouveau grade</button><button class="btn" id="exp">Exporter</button><button class="btn" id="clrlog">Vider l'historique</button></div>
   <div class="tbl" id="reg"><div id="grades"></div></div>
   <details class="dt mjonly" id="acc"><summary>Comptes &amp; permissions admin</summary><div class="acc"><input type="search" id="qa" placeholder="Chercher un compte…" aria-label="Chercher un compte"><div id="accList"></div></div></details>
+  <details class="dt" id="memo"><summary>Mémorial &amp; archives (<span id="memoCount">0</span>)</summary><div class="memo" id="memoList"></div></details>
   <details class="dt" id="hist"><summary>Historique des promotions</summary><div class="hist" id="histList"></div></details>
 </main>
 <div class="mod hide" id="mod" role="dialog" aria-modal="true"><div class="box"><p id="modT"></p><input id="modI" type="password" autocomplete="off" aria-label="Mot de passe"><div class="row"><button class="btn" id="modC">Annuler</button><button class="btn gold" id="modO">Valider</button></div></div></div>
@@ -88,11 +93,11 @@ footer{text-align:center;color:var(--mute);font-size:11px;letter-spacing:.12em;t
 <footer>Recensement Kumo · Effectifs &amp; paliers · Données synchronisées en direct</footer>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
 <script>
-const SB_URL='https://adbbebkkjpwxmuojwovi.supabase.co',SB_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFkYmJlYmtranB3eG11b2p3b3ZpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTE0NjgwNDcsImV4cCI6MjEwNzA0NDA0N30.yJ444yQuPm16u7nX1Pe9VhxQP85fYi9Y8sXRjKOW-zY';
+const SB_URL='COLLE_ICI_TON_URL_SUPABASE',SB_KEY='COLLE_ICI_TA_CLE_ANON_PUBLIQUE';
 const CFG=!/^COLLE/.test(SB_URL),sb=CFG?supabase.createClient(SB_URL,SB_KEY):null;
 const $=id=>document.getElementById(id);
 const mail=p=>p.trim().toLowerCase().replace(/[^a-z0-9._-]/g,'_')+'@kumo-recensement.com';
-const S={title:'Recensement Kumo',subtitle:'Effectifs · Paliers · Clans',grades:[],log:[],profiles:[],col:{},sort:'clan'};
+const S={title:'Recensement Kumo',subtitle:'Effectifs · Paliers · Clans',grades:[],log:[],profiles:[],memo:[],col:{},sort:'clan'};
 let me=null,mj=false,clanF='',query='',onlyDispo=false,qa='';
 try{S.col=JSON.parse(localStorage.getItem('rk-col'))||{};S.sort=localStorage.getItem('rk-sort')||'clan'}catch(e){}
 const saveCol=()=>{try{localStorage.setItem('rk-col',JSON.stringify(S.col))}catch(e){}};
@@ -103,8 +108,10 @@ const avg=a=>a.length?(a.reduce((x,r)=>x+(+r.pl||0),0)/a.length).toFixed(1).repl
 const SORTS={clan:(a,b)=>(!a.r.clan)-(!b.r.clan)||(a.r.clan||'').localeCompare(b.r.clan||'','fr')||(+b.r.pl||0)-(+a.r.pl||0)||(a.r.mc||'').localeCompare(b.r.mc||'','fr'),palier:(a,b)=>(+b.r.pl||0)-(+a.r.pl||0)||(a.r.clan||'').localeCompare(b.r.clan||'','fr')||(a.r.mc||'').localeCompare(b.r.mc||'','fr')};
 const hue=c=>`hsl(${[...c.toLowerCase()].reduce((a,x)=>a*31+x.charCodeAt(0),7)%360} 65% 55%)`;
 let modRes=null;
-function ask(text){return new Promise(res=>{const m=$('mod');$('modT').textContent=text;$('modI').classList.add('hide');m.classList.remove('hide');modRes=v=>{m.classList.add('hide');modRes=null;res(v)}})}
-$('modO').onclick=()=>modRes&&modRes(true);$('modC').onclick=()=>modRes&&modRes(null);
+function ask(text,mode){return new Promise(res=>{const m=$('mod'),i=$('modI');$('modT').textContent=text;i.classList.toggle('hide',mode!=='text');i.type='text';i.placeholder='Hommage ou raison…';i.value='';m.classList.remove('hide');if(mode==='text')i.focus();modRes=v=>{m.classList.add('hide');modRes=null;res(v)}})}
+const askText=t=>ask(t,'text');
+$('modO').onclick=()=>modRes&&modRes($('modI').classList.contains('hide')?true:$('modI').value);$('modC').onclick=()=>modRes&&modRes(null);
+$('modI').onkeydown=e=>{if(e.key==='Enter')$('modO').click();if(e.key==='Escape')$('modC').click()};
 let tt;function toast(t){const el=$('toast');el.textContent=t;el.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>el.classList.remove('on'),2600)}
 function stats(){
  const all=S.grades.flatMap(g=>g.rows.filter(filled));
@@ -120,11 +127,15 @@ function ok(r){
  return !query||[r.mc,r.discord,r.clan,r.rp,r.spe].join(' ').toLowerCase().includes(query);
 }
 function hist(){$('histList').innerHTML=S.log.length?S.log.map(l=>`<div><time>${new Date(l.d).toLocaleString('fr-FR',{dateStyle:'short',timeStyle:'short'})}</time><span>${esc(l.t)}</span></div>`).join(''):'<p>Aucune promotion enregistrée pour le moment.</p>'}
+function memorial(){
+ $('memoCount').textContent=S.memo.length;
+ $('memoList').innerHTML=S.memo.length?S.memo.map(r=>`<div class="mm"><div class="mh"><b>${esc(r.rp||r.mc)}</b><span>${esc(r.mc)}${r.clan?' · '+esc(r.clan):''}${r.old_grade?' · '+esc(r.old_grade):''} · palier ${esc(r.pl)}${+r.kkg?' · KKG '+r.kkg:''}</span><time>${r.archived_at?new Date(r.archived_at).toLocaleDateString('fr-FR'):''}</time></div>${r.memo?`<p>${esc(r.memo)}</p>`:''}${mj?`<div class="mb"><button class="btn sm" data-rest="${r.id}">Restaurer</button><button class="btn sm red" data-purge="${r.id}">Supprimer définitivement</button></div>`:''}</div>`).join(''):'<p class="mn">Le mémorial est vide pour le moment.</p>';
+}
 function accounts(){
  if(!mj)return;
  $('accList').innerHTML=S.profiles.filter(p=>!qa||p.pseudo.toLowerCase().includes(qa)).map(p=>{
   const row=S.grades.flatMap(g=>g.rows).find(r=>r.owner===p.id),adm=p.role==='admin',self=p.id===me.id;
-  return`<div class="ar"><span class="n">${esc(p.pseudo)}${self?' (toi)':''}</span><span class="rb ${adm?'adm':''}">${adm?'Admin':'Joueur'}</span><span class="l">${row?'Ligne : '+esc(row.mc):'Aucune ligne liée'}</span><button class="btn sm ${adm?'red':'gold'}" data-role="${p.id}" ${self?'disabled title="Tu ne peux pas retirer tes propres droits"':''}>${adm?'Retirer admin':'Donner admin'}</button></div>`}).join('')||'<p style="color:#8d97b5">Aucun compte.</p>';
+  return`<div class="ar"><span class="n">${esc(p.pseudo)}${self?' (toi)':''}</span><span class="rb ${adm?'adm':''}">${adm?'Admin':'Joueur'}</span><span class="l">${row?'Ligne : '+esc(row.mc):'Aucune ligne liée'}</span><button class="btn sm ${adm?'red':'gold'}" data-role="${p.id}" ${self?'disabled title="Tu ne peux pas retirer tes propres droits"':''}>${adm?'Retirer admin':'Donner admin'}</button><button class="btn sm red" data-delacc="${p.id}" ${self?'disabled':''}>Supprimer le compte</button></div>`}).join('')||'<p style="color:#8d97b5">Aucun compte.</p>';
 }
 function render(){
  if(!me)return;
@@ -134,18 +145,19 @@ function render(){
  for(const id of['title','subtitle']){const el=$(id);el.value=S[id];el.readOnly=true}
  const f=clanF||query||onlyDispo,ro=mj?'':'readonly';
  const inp=(i,j,k,ph,cls='')=>{const r=S.grades[i].rows[j];return`<input class="t ${cls}" data-g="${i}" data-r="${j}" data-k="${k}" value="${esc(r[k])}" placeholder="${ph}" aria-label="${ph}" ${mj||(r.owner===me.id&&k!=='mc')?'':'readonly'}>`};
- $('grades').innerHTML='<div class="row cols"><span>Palier</span><span>Pseudo MC</span><span>Discord</span><span>Clan</span><span>Prénom RP</span><span>Spécialisation</span><span>Dispo</span><span class="mjonly">Actions</span></div>'+(S.grades.map((g,i)=>{
+ $('grades').innerHTML='<div class="row cols"><span>Palier</span><span>Pseudo MC</span><span>Discord</span><span>Clan</span><span>Prénom RP</span><span>Spécialisation</span><span>KKG</span><span>Dispo</span><span class="mjonly">Actions</span></div>'+(S.grades.map((g,i)=>{
   const rows=g.rows.map((r,j)=>({r,j})).filter(({r})=>!f||(filled(r)&&ok(r))).sort(SORTS[S.sort]||(()=>0));
   if(f&&!rows.length)return'';
   const fl=g.rows.filter(filled),open=f||!S.col[g.id];
-  const body=rows.map(({r,j})=>`<div class="row ${filled(r)?'':'empty'} ${r.owner===me.id?'me':''}" style="border-left:3px solid ${r.clan?hue(r.clan):'transparent'}"><input class="pl" type="number" data-g="${i}" data-r="${j}" data-k="pl" value="${esc(r.pl)}" aria-label="Palier" ${can(r)?'':'readonly'}>${inp(i,j,'mc','Pseudo MC','b')}${inp(i,j,'discord','Discord')}${inp(i,j,'clan','Clan')}${inp(i,j,'rp','Prénom RP')}${inp(i,j,'spe','Spécialisation')}<button class="dispo ${r.dispo?'on':''}" data-tg="${i}.${j}" ${can(r)?'':'disabled'}>${r.dispo?'Dispo':'Absent'}</button><span class="ac mjonly">${filled(r)&&i>0?`<button class="x up" data-up="${i}.${j}" title="Promouvoir : ${esc(S.grades[i-1].name)}">↑ Grade</button>`:''}${filled(r)&&i<S.grades.length-1?`<button class="x dn" data-dn="${i}.${j}" title="Rétrograder : ${esc(S.grades[i+1].name)}">↓</button>`:''}<button class="x" data-delr="${i}.${j}" aria-label="Supprimer la ligne">×</button></span></div>`).join('');
+  const body=rows.map(({r,j})=>`<div class="row ${filled(r)?'':'empty'} ${r.owner===me.id?'me':''}" style="border-left:3px solid ${r.clan?hue(r.clan):'transparent'}"><input class="pl" type="number" data-g="${i}" data-r="${j}" data-k="pl" value="${esc(r.pl)}" aria-label="Palier" ${can(r)?'':'readonly'}>${inp(i,j,'mc','Pseudo MC','b')}${inp(i,j,'discord','Discord')}${inp(i,j,'clan','Clan')}${inp(i,j,'rp','Prénom RP')}${inp(i,j,'spe','Spécialisation')}<select class="kk" data-g="${i}" data-r="${j}" data-k="kkg" data-v="${r.kkg}" aria-label="KKG" ${mj?'':'disabled'}>${[0,1,2,3].map(v=>`<option value="${v}" ${+r.kkg===v?'selected':''}>${v}</option>`).join('')}</select><button class="dispo ${r.dispo?'on':''}" data-tg="${i}.${j}" ${can(r)?'':'disabled'}>${r.dispo?'Dispo':'Absent'}</button><span class="ac mjonly">${filled(r)&&i>0?`<button class="x up" data-up="${i}.${j}" title="Promouvoir : ${esc(S.grades[i-1].name)}">↑ Grade</button>`:''}${filled(r)&&i<S.grades.length-1?`<button class="x dn" data-dn="${i}.${j}" title="Rétrograder : ${esc(S.grades[i+1].name)}">↓</button>`:''}${filled(r)?`<button class="x arc" data-arch="${i}.${j}" title="Archiver au mémorial">Archiver</button>`:''}<button class="x" data-delr="${i}.${j}" aria-label="Supprimer la ligne">×</button></span></div>`).join('');
   return`<div class="band"><button class="tg" data-tog="${g.id}" aria-expanded="${open}" aria-label="Replier ou déplier">${open?'▾':'▸'}</button><input class="gn" data-g="${i}" data-k="name" value="${esc(g.name)}" aria-label="Nom du grade" ${ro}><span class="bm"><b data-n="${i}">${fl.length}</b> membres · palier moyen <b data-a="${i}">${avg(fl)}</b></span><span class="bt mjonly"><button class="btn sm gold" data-add="${i}">+ Membre</button><button class="btn sm red" data-delg="${i}">Supprimer</button></span></div>`+(open?(body||'<div class="none">Aucun membre pour le moment.</div>'):'')}).join('')||'<p class="none">Aucun résultat.</p>');
- stats();hist();accounts();
+ stats();hist();accounts();memorial();
 }
 async function load(){
  const[g,m,l,pr]=await Promise.all([sb.from('grades').select('*').order('position'),sb.from('members').select('*').order('created_at'),sb.from('log').select('*').order('created_at',{ascending:false}).limit(60),sb.from('profiles').select('*').order('pseudo')]);
  if(g.error||m.error)return toast('Erreur de chargement des données');
- S.grades=g.data.map(x=>({id:x.id,name:x.name,rows:m.data.filter(r=>r.grade_id===x.id)}));
+ S.grades=g.data.map(x=>({id:x.id,name:x.name,rows:m.data.filter(r=>r.grade_id===x.id&&!r.archived)}));
+ S.memo=m.data.filter(r=>r.archived).sort((a,b)=>Date.parse(b.archived_at||0)-Date.parse(a.archived_at||0));
  S.log=(l.data||[]).map(x=>({d:Date.parse(x.created_at),t:x.txt}));
  S.profiles=pr.data||[];const mine=S.profiles.find(x=>x.id===me.id);if(mine){me=mine;mj=mine.role==='admin'}
  render();
@@ -161,7 +173,7 @@ document.addEventListener('input',e=>{
  if(t.readOnly||!k)return;
  const g=S.grades[t.dataset.g];
  if(t.dataset.r!==undefined){
-  const r=g.rows[t.dataset.r];r[k]=k==='pl'?(t.value===''?0:+t.value):t.value;push('members',r.id,{[k]:r[k]});
+  const r=g.rows[t.dataset.r];r[k]=(k==='pl'||k==='kkg')?(t.value===''?0:+t.value):t.value;if(k==='kkg')t.dataset.v=t.value;push('members',r.id,{[k]:r[k]});
   t.closest('.row').classList.toggle('empty',!filled(r));
   const fl=g.rows.filter(filled),i=t.dataset.g;document.querySelector('[data-n="'+i+'"]').textContent=fl.length;document.querySelector('[data-a="'+i+'"]').textContent=avg(fl);
  }else{g[k]=t.value;push('grades',g.id,{[k]:t.value})}
@@ -173,6 +185,10 @@ document.addEventListener('click',e=>{
  if(b.id==='mjb'){sb&&sb.auth.signOut().then(()=>location.reload());return}
  if(d.c!==undefined){clanF=clanF===d.c?'':d.c;render()}
  else if(d.tg){const[i,j]=d.tg.split('.');const r=S.grades[i].rows[j];if(!can(r))return;r.dispo=!r.dispo;push('members',r.id,{dispo:r.dispo});render()}
+ else if(d.arch){const[i,j]=d.arch.split('.').map(Number),g=S.grades[i],r=g.rows[j];askText('Archiver '+(r.rp||r.mc)+' au mémorial ? Ajoute un hommage ou une raison (facultatif).').then(v=>{if(v===null)return;sb.from('members').update({archived:true,archived_at:new Date().toISOString(),memo:v.trim(),old_grade:g.name}).eq('id',r.id).select().then(({data,error})=>{if(error||!data.length)return toast('Refusé');sb.from('log').insert({txt:'Archivé — '+(r.mc||r.rp)+' ('+g.name+')'}).then(()=>{toast('Archivé au mémorial');load()})})})}
+ else if(d.rest){const r=S.memo.find(x=>x.id===d.rest);if(!mj||!r)return;ask('Restaurer '+(r.rp||r.mc)+' dans '+(r.old_grade||'son grade')+' ?').then(v=>{if(v)sb.from('members').update({archived:false,archived_at:null,memo:''}).eq('id',r.id).select().then(({data,error})=>{if(error||!data.length)return toast('Refusé');sb.from('log').insert({txt:'Restauré — '+(r.mc||r.rp)}).then(()=>{toast('Restauré');load()})})})}
+ else if(d.purge){const r=S.memo.find(x=>x.id===d.purge);if(!mj||!r)return;ask('Supprimer définitivement '+(r.rp||r.mc)+' du mémorial ?').then(v=>{if(v)sb.from('members').delete().eq('id',r.id).then(()=>load())})}
+ else if(d.delacc){const p=S.profiles.find(x=>x.id===d.delacc);if(!mj||!p||p.id===me.id)return;ask('Supprimer définitivement le compte '+p.pseudo+' ? Sa ligne est conservée mais ne sera plus reliée à personne.').then(v=>{if(!v)return;sb.rpc('delete_account',{uid:p.id}).then(({error})=>{if(error)return toast('Refusé : '+error.message);sb.from('log').insert({txt:'Compte supprimé — '+p.pseudo}).then(()=>{toast('Compte supprimé : '+p.pseudo);load()})})})}
  else if(d.role){const p=S.profiles.find(x=>x.id===d.role);if(!mj||!p||p.id===me.id)return;const adm=p.role==='admin';ask((adm?'Retirer les droits admin à ':'Donner les droits admin à ')+p.pseudo+' ?').then(v=>{if(!v)return;sb.from('profiles').update({role:adm?'player':'admin'}).eq('id',p.id).select().then(({data,error})=>{if(error||!data.length)return toast(error?error.message:'Refusé');sb.from('log').insert({txt:(adm?'Droits admin retirés — ':'Droits admin donnés — ')+p.pseudo}).then(()=>{toast((adm?'Admin retiré : ':'Nouvel admin : ')+p.pseudo);load()})})})}
  else if(d.tog){S.col[d.tog]=!S.col[d.tog];saveCol();render()}
  else if(b.id==='colAll'){const any=S.grades.some(g=>!S.col[g.id]);S.col={};if(any)S.grades.forEach(g=>S.col[g.id]=true);saveCol();render()}
